@@ -1,4 +1,4 @@
-/* package com.example;
+ package com.example;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
@@ -32,7 +32,7 @@ public class SimpleSortTest {
         System.out.println(list);
         ArrayList<Integer> expected = new ArrayList<>(list);
         Collections.sort(expected);
-        ArrayList<Integer> actual = sorting.insertionSort(list);
+        ArrayList<Integer> actual = sorting.insertionSort(list).get(list.size() - 1);
         assertEquals(expected, actual);
     }
 
@@ -46,7 +46,7 @@ public class SimpleSortTest {
         System.out.println(list);
         ArrayList<Integer> expected = new ArrayList<>(list);
         Collections.sort(expected);
-        ArrayList<Integer> actual = sorting.insertionSort(list);
+        ArrayList<Integer> actual = sorting.insertionSort(list).get(list.size() - 1);
         assertEquals(expected, actual);
     }
 
@@ -55,11 +55,11 @@ public class SimpleSortTest {
     void bestcaseInsertion() {
         SimpleSort sorting = new SimpleSort();
         ArrayList<Integer> list = randomList();
-        ArrayList<Integer> expected = (ArrayList<Integer>) list.clone();
+        ArrayList<Integer> expected = sorting.copy(list);
         Collections.sort(expected);
-        ArrayList<Integer> actual = sorting.insertionSort(list);
+        ArrayList<Integer> actual = sorting.insertionSort(list).get(list.size()-1);
         assertEquals(expected, actual);
 }
 
 }
- */
+ 
