@@ -23,6 +23,7 @@ public class SimpleSort {
     }
 
     public ArrayList<Integer> insertionSort(ArrayList<Integer> list) {
+        
        for (int i = 1; i < list.size(); i++) {
             int temp = list.get(i);
             int j = 0;
