@@ -19,7 +19,7 @@ public class Test {
         EfficientSort e = new EfficientSort();
         ArrayList<Integer> sorted = e.MergeSort(lis,true);
         System.out.println(sorted);
-        System.out.print(e.sortedTest(sorted));
+        System.out.print("Is Sorted? "+e.sortedTest(sorted));
 
 
     }

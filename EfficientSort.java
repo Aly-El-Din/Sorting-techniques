@@ -78,11 +78,11 @@ public class EfficientSort {
             mergeIn.add(right.get(rightPointer)) ;
             rightPointer ++;
         }
-            if(wantSteps){
+        if(wantSteps){
                 System.out.print("Merged: ");
                 printIntermediate(mergeIn);
                 System.out.println();
-            }
+        }
         return mergeIn;
     }
 
