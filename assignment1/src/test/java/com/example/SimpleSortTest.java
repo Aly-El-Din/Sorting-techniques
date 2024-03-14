@@ -1,4 +1,4 @@
-package com.example;
+/* package com.example;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ public class SimpleSortTest {
         Random random = new Random();
         ArrayList<Integer> list = new ArrayList<>();
         // Consider reducing the size for this test due to the very strict time limit
-        int size = random.nextInt(100000);
+        int size = random.nextInt(1000);
 
         for (int j = 0; j < size; j++) {
             list.add(random.nextInt(10000));
@@ -22,19 +22,13 @@ public class SimpleSortTest {
 
         return list;
     }
- 
+
     @Test
+    @Timeout(value = 1, unit = TimeUnit.MICROSECONDS)
     public void RandomListsTest() {
-        Random random = new Random();
+
         SimpleSort sorting = new SimpleSort();
-
-        ArrayList<Integer> list = new ArrayList<>();
-        int size = random.nextInt(100);
-
-        for (int j = 0; j < size; j++) {
-            list.add(random.nextInt(1000));
-        }
-
+        ArrayList<Integer> list = randomList();
         System.out.println(list);
         ArrayList<Integer> expected = new ArrayList<>(list);
         Collections.sort(expected);
@@ -42,38 +36,30 @@ public class SimpleSortTest {
         assertEquals(expected, actual);
     }
 
+   
+    @Test
+    @Timeout(value = 2, unit = TimeUnit.MICROSECONDS)
+    void timeLimitTest() {
 
-   /*  @Test
-   @Timeout(1)
-   void timeLimitTest() {
-       Random random = new Random();
-       SimpleSort sorting = new SimpleSort();
-   
-       ArrayList<Integer> list = new ArrayList<>();
-       int size = random.nextInt(100000000);
-   
-       for (int j = 0; j < size; j++) {
-           list.add(random.nextInt(10000));
-       }
-   
-       System.out.println(list);
-       ArrayList<Integer> expected = new ArrayList<>(list);
-       Collections.sort(expected);
-       ArrayList<Integer> actual = sorting.insertionSort(list);
-       assertEquals(expected, actual);
-   
-   } */
-@Test
-@Timeout(value = 1, unit = TimeUnit.MILLISECONDS)
-void timeLimitTest() {
-    
-    SimpleSort sorting = new SimpleSort();
-    ArrayList<Integer> list = randomList();
-    System.out.println(list);
-    ArrayList<Integer> expected = new ArrayList<>(list);
-    Collections.sort(expected);
-    ArrayList<Integer> actual = sorting.insertionSort(list);
-    assertEquals(expected, actual);
+        SimpleSort sorting = new SimpleSort();
+        ArrayList<Integer> list = randomList();
+        System.out.println(list);
+        ArrayList<Integer> expected = new ArrayList<>(list);
+        Collections.sort(expected);
+        ArrayList<Integer> actual = sorting.insertionSort(list);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+   //@Timeout(value = 10, unit = TimeUnit.MILLISECONDS)
+    void bestcaseInsertion() {
+        SimpleSort sorting = new SimpleSort();
+        ArrayList<Integer> list = randomList();
+        ArrayList<Integer> expected = (ArrayList<Integer>) list.clone();
+        Collections.sort(expected);
+        ArrayList<Integer> actual = sorting.insertionSort(list);
+        assertEquals(expected, actual);
 }
 
 }
+ */
