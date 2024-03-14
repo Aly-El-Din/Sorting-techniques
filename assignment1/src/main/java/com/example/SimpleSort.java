@@ -1,11 +1,8 @@
 package com.example;
-
 import java.util.*;
-
 public class SimpleSort {
 
     public ArrayList<Integer> selectionSort(ArrayList<Integer> list) {
-
         for (int j = 0; j < list.size() - 1; j++) {
             // setting the smallest as the first element in sublist
             int smallestIndex = j;
@@ -24,7 +21,7 @@ public class SimpleSort {
         }
         return list;
     }
-
+    
     public ArrayList<Integer> insertionSort(ArrayList<Integer> list) {
        for (int i = 1; i < list.size(); i++) {
             int temp = list.get(i);
