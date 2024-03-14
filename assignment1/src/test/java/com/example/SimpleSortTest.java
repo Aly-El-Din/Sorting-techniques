@@ -11,6 +11,15 @@ public class SimpleSortTest {
 
     @Test
     public void testInsertionSort() {
+        SimpleSort sorting = new SimpleSort();
+        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
+        ArrayList<Integer> expected = new ArrayList<>(list);
+        Collections.sort(expected);
+        assertEquals(expected, sorting.insertionSort(list));
+    }
+
+    @Test
+    public void testSelectionSort() {
 
         SimpleSort sorting = new SimpleSort();
 
