@@ -5,8 +5,9 @@ public class Main {
     public static void main(String[] args) {
         SimpleSort sort = new SimpleSort();
 
-         ArrayList<Integer> list = new ArrayList<>();
+        ArrayList<Integer> list = new ArrayList<>();
 
+         
         list.add(8);
         list.add(2);
         list.add(10);
