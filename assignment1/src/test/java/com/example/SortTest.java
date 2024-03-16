@@ -34,7 +34,7 @@ public class SortTest {
         System.out.println(list);
         ArrayList<Integer> expected = new ArrayList<>(list);
         Collections.sort(expected);
-        ArrayList<Integer> actual = sorting.insertionSort(list).get(list.size() - 1);
+        ArrayList<Integer> actual = sorting.insertionSort(list, false);
         assertEquals(expected, actual);
     }
 
@@ -48,7 +48,7 @@ public class SortTest {
         System.out.println(list);
         ArrayList<Integer> expected = new ArrayList<>(list);
         Collections.sort(expected);
-        ArrayList<Integer> actual = sorting.insertionSort(list).get(list.size() - 1);
+        ArrayList<Integer> actual = sorting.insertionSort(list, false);
         assertEquals(expected, actual);
     }
 
@@ -59,7 +59,7 @@ public class SortTest {
        ArrayList<Integer> list = randomList();
        ArrayList<Integer> expected = sorting.copy(list);
        Collections.sort(expected);
-       ArrayList<Integer> actual = sorting.insertionSort(list).get(list.size() - 1);
+       ArrayList<Integer> actual = sorting.insertionSort(list, false);
        assertEquals(expected, actual);
    }
     

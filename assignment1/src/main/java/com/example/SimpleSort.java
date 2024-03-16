@@ -4,6 +4,9 @@ import java.util.*;
 
 public class SimpleSort {
 
+    ArrayList<ArrayList<Integer>> snapshots = new ArrayList<>();
+
+
     public ArrayList<ArrayList<Integer>> selectionSort(ArrayList<Integer> list) {
         ArrayList<ArrayList<Integer>> snapshots = new ArrayList<>();
         snapshots.add(copy(list));
@@ -27,7 +30,7 @@ public class SimpleSort {
         return snapshots;
     }
 
-    public ArrayList<ArrayList<Integer>> insertionSort(ArrayList<Integer> list) {
+    public ArrayList<ArrayList<Integer>> sort(ArrayList<Integer> list) {
         // List to hold the snapshots after each iteration
         ArrayList<ArrayList<Integer>> snapshots = new ArrayList<>();
         snapshots.add(copy(list));
@@ -54,6 +57,14 @@ public class SimpleSort {
         }
         return snapshot;
     }
+
+    public ArrayList<Integer> insertionSort(ArrayList<Integer> list,boolean steps) {
+        sort(list);
+        
+        return list;
+    }
+
+    
     
 
     

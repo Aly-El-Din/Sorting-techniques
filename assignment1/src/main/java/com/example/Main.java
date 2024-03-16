@@ -15,6 +15,6 @@ public class Main {
         list.add(1);
         System.out.println("Unsorted List: " + list.toString());
         
-        System.out.println("Insertion sort: "+ sort.insertionSort(list));
+        System.out.println("Insertion sort: "+ sort.insertionSort(list,false));
     }
 }
