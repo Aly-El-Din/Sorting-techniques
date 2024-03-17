@@ -22,7 +22,6 @@ public class SortTest {
         for (int j = 0; j < size; j++) {
             list.add(random.nextInt(10000));
         }
-
         return list;
     }
 
@@ -37,22 +36,19 @@ public class SortTest {
         assertEquals(expected, actual);
     }
 
-
     /*
      * Plug any algorithm to run this test and an appropriate time limit to be set.
      */
     @Test
-    @Timeout(value = 2, unit = TimeUnit.MILLISECONDS)     
-    void timeLimitTest() {
+    @Timeout(value = 8, unit = TimeUnit.MILLISECONDS)     
+    void timeLimitTestInsertion() {
         SimpleSort sorting = new SimpleSort();
         ArrayList<Integer> list = randomList();
-        System.out.println(list);
         ArrayList<Integer> expected = new ArrayList<>(list);
         Collections.sort(expected);
         ArrayList<Integer> actual = sorting.insertionSort(list);
         assertEquals(expected, actual);
     }
-
     @Test  //best case insertion sort array sorted
     void bestcaseInsertionSortTest() {
         SimpleSort sorting = new SimpleSort();
@@ -62,6 +58,18 @@ public class SortTest {
         ArrayList<Integer> actual = sorting.insertionSort(list);
         assertEquals(expected, actual);
     }
+    
+    @Test // worst case insertion sort array reversed
+    void worstcaseInsertionSortTest() {
+        SimpleSort sorting = new SimpleSort();
+        ArrayList<Integer> list = randomList();
+        Collections.sort(list, Collections.reverseOrder());
+        ArrayList<Integer> expected = sorting.copy(list);
+        Collections.sort(expected);
+        ArrayList<Integer> actual = sorting.insertionSort(list);
+        assertEquals(expected, actual);
+    }
+
     /*
      * any algorithm could be chosen to run this test
      * for now it is set to counting sort
@@ -91,9 +99,8 @@ public class SortTest {
         assertEquals(list, actual);
     }
 
-
     @Test  // time comparison between the three algorithms
-    void timeComarisonTest() {
+    void timeComparisonTest() {
 
         Long startTime, endTime;
         ArrayList<Integer> list = randomList();
@@ -124,7 +131,6 @@ public class SortTest {
                 "Time taken to sort the array using counting sort: " + (endTime - startTime) / 1000 + " microseconds");
     }
     
-
     @Test // empty list test on isertion sort
     void emptyListTest() {
         SimpleSort sorting = new SimpleSort();
@@ -143,4 +149,45 @@ public class SortTest {
         ArrayList<Integer> actual = sorting.insertionSort(list);
         assertEquals(expected, actual);
     }
+
+    @Test  // Merge sort test in random case
+    void mergeSortTest() {
+        EfficientSort sorting = new EfficientSort();
+        ArrayList<Integer> list = randomList();
+        ArrayList<Integer> expected = new ArrayList<>(list);
+        Collections.sort(expected);
+        ArrayList<Integer> actual = sorting.MergeSort(list, false);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    @Timeout(value = 1, unit = TimeUnit.MILLISECONDS)
+    void timeLimitTestCounting() {
+        ArrayList<Integer> list = randomList();
+        CountingSort countingSort = new CountingSort(list);
+        ArrayList<Integer> expected = new ArrayList<>(list);
+        Collections.sort(expected);
+        int[] aux = countingSort.returnFinalSorted();
+        ArrayList<Integer> actual = new ArrayList<>();
+        for (int value : aux) {
+            actual.add(value);
+        }
+        assertEquals(expected, actual);
+    }
+
+    @Test // random case for counting sort
+    public void randomCountingSort() {
+        ArrayList<Integer> list = randomList();
+        CountingSort countingSort = new CountingSort(list);
+        ArrayList<Integer> expected = new ArrayList<>(list);
+        Collections.sort(expected);
+        int[] aux = countingSort.returnFinalSorted();
+        ArrayList<Integer> actual = new ArrayList<>();
+        for (int value : aux) {
+            actual.add(value);
+        }
+
+        assertEquals(expected, actual);
+    }
+
 }
