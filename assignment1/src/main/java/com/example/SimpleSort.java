@@ -6,7 +6,6 @@ public class SimpleSort {
 
     ArrayList<ArrayList<Integer>> snapshots = new ArrayList<>();
 
-
     public ArrayList<ArrayList<Integer>> selectionSort(ArrayList<Integer> list) {
         ArrayList<ArrayList<Integer>> snapshots = new ArrayList<>();
         snapshots.add(copy(list));
@@ -19,6 +18,7 @@ public class SimpleSort {
                     smallestIndex = currentIndex;
                 }
             }
+            
             // swaping in case current smaller than the smallest element
             if (smallestIndex != j) {
                 int temp = list.get(j);
