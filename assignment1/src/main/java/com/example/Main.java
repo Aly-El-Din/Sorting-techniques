@@ -63,7 +63,12 @@ public class Main {
     }
 
     public static void sortArray(ArrayList<Integer> array, int choiceFormate) {
+        EfficientSort efficientSort = new EfficientSort();
+        SimpleSort simpleSort = new SimpleSort();
+        CountingSort countingSort = new CountingSort(array);
+
         Scanner sc = new Scanner(System.in);
+
         System.out.println("Pleae select the sorting algorithm you want to use");
         System.out.println("1. Insertion Sort");
         System.out.println("2. Merge Sort");
@@ -71,16 +76,18 @@ public class Main {
         System.out.println("4. Return to main menu");
         System.out.println("5. Exit");
         int choice = sc.nextInt();
+
+        sc.close();
         switch (choice) {
             case 1:
                 if (choiceFormate == 1) {
                     System.out.println("You have selected Insertion Sort");
                     System.out.println("The sorted array is: ");
-                    System.out.println(InsertionSort.sort(array, choiceFormate));
+                    System.out.println(simpleSort.insertionSort(array));
                 } else if (choiceFormate == 2) {
                     System.out.println("You have selected Insertion Sort");
                     System.out.println("The intermediate steps of the sorting algorithm are: ");
-                    InsertionSort.sort(array, choiceFormate);
+                   simpleSort.sort(array);
                 } else {
                     System.out.println("Invalid choice");
                 }
@@ -89,11 +96,11 @@ public class Main {
                 if (choiceFormate == 1) {
                     System.out.println("You have selected Merge Sort");
                     System.out.println("The sorted array is: ");
-                    System.out.println(MergeSort.sort(array, choiceFormate));
+                    System.out.println(efficientSort.MergeSort(array, false));
                 } else if (choiceFormate == 2) {
                     System.out.println("You have selected Merge Sort");
                     System.out.println("The intermediate steps of the sorting algorithm are: ");
-                    MergeSort.sort(array, choiceFormate);
+                    efficientSort.MergeSort(array, true);
                 } else {
                     System.out.println("Invalid choice");
                 }
@@ -102,11 +109,11 @@ public class Main {
                 if (choiceFormate == 1) {
                     System.out.println("You have selected Counting Sort");
                     System.out.println("The sorted array is: ");
-                    System.out.println(CountingSort.sort(array, choiceFormate));
+                    System.out.println(countingSort.returnFinalSorted());
                 } else if (choiceFormate == 2) {
                     System.out.println("You have selected Counting Sort");
                     System.out.println("The intermediate steps of the sorting algorithm are: ");
-                    CountingSort.sort(array, choiceFormate);
+                    System.out.println(countingSort.returnIntermediateArrays()); 
                 } else {
                     System.out.println("Invalid choice");
                 }

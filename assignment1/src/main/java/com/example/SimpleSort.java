@@ -58,7 +58,7 @@ public class SimpleSort {
         return snapshot;
     }
 
-    public ArrayList<Integer> insertionSort(ArrayList<Integer> list,boolean steps) {
+    public ArrayList<Integer> insertionSort(ArrayList<Integer> list) {
         sort(list);
         
         return list;

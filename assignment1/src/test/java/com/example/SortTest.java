@@ -33,7 +33,7 @@ public class SortTest {
         System.out.println(list);
         ArrayList<Integer> expected = new ArrayList<>(list);
         Collections.sort(expected);
-        ArrayList<Integer> actual = sorting.insertionSort(list, false);
+        ArrayList<Integer> actual = sorting.insertionSort(list);
         assertEquals(expected, actual);
     }
 
@@ -49,7 +49,7 @@ public class SortTest {
         System.out.println(list);
         ArrayList<Integer> expected = new ArrayList<>(list);
         Collections.sort(expected);
-        ArrayList<Integer> actual = sorting.insertionSort(list, false);
+        ArrayList<Integer> actual = sorting.insertionSort(list);
         assertEquals(expected, actual);
     }
 
@@ -59,7 +59,7 @@ public class SortTest {
         ArrayList<Integer> list = randomList();
         ArrayList<Integer> expected = sorting.copy(list);
         Collections.sort(expected);
-        ArrayList<Integer> actual = sorting.insertionSort(list, false);
+        ArrayList<Integer> actual = sorting.insertionSort(list);
         assertEquals(expected, actual);
     }
     /*
@@ -102,7 +102,7 @@ public class SortTest {
         // simple sort
         SimpleSort insertion = new SimpleSort();
         startTime = System.nanoTime();
-        ArrayList<Integer> actual = insertion.insertionSort(list, false);
+        ArrayList<Integer> actual = insertion.insertionSort(list);
         endTime = System.nanoTime();
         System.out.println(
                 "Time taken to sort the array using insertion sort: " + (endTime - startTime) / 1000 + " microseconds");
@@ -130,7 +130,7 @@ public class SortTest {
         SimpleSort sorting = new SimpleSort();
         ArrayList<Integer> list = new ArrayList<>();
         ArrayList<Integer> expected = new ArrayList<>(list);
-        ArrayList<Integer> actual = sorting.insertionSort(list, false);
+        ArrayList<Integer> actual = sorting.insertionSort(list);
         assertEquals(expected, actual);
     }
 
@@ -140,7 +140,7 @@ public class SortTest {
         ArrayList<Integer> list = new ArrayList<>();
         list.add(1);
         ArrayList<Integer> expected = new ArrayList<>(list);
-        ArrayList<Integer> actual = sorting.insertionSort(list, false);
+        ArrayList<Integer> actual = sorting.insertionSort(list);
         assertEquals(expected, actual);
     }
 }
