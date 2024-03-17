@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class EfficientSort {
+    //saving snapshots of the array on each iteration
     ArrayList<ArrayList<Integer>> snapShots = new ArrayList<>();
 
     void printIntermediate(ArrayList<Integer> iteration) {
