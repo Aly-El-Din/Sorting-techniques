@@ -5,7 +5,7 @@ import java.util.Collections;
 
 public class CountingSort {
     private ArrayList<Integer> list;
-    private int size;
+    private int size; 
 
     CountingSort(ArrayList<Integer> list) {
         this.list = list;
