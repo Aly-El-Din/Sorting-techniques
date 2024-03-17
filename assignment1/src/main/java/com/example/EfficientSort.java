@@ -1,9 +1,11 @@
-package com.example;
+package assignment1.src.main.java.com.example;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class EfficientSort {
+    ArrayList<ArrayList<Integer>> snapShots = new ArrayList<>();
+
     void printIntermediate(ArrayList<Integer> iteration) {
         System.out.print(Arrays.toString(iteration.toArray()));
     }
@@ -20,6 +22,7 @@ public class EfficientSort {
     ArrayList<Integer> MergeSort(ArrayList<Integer> array, boolean wantSteps) {
         int size = array.size();
         if (wantSteps) {
+            snapShots.add(array);
             System.out.print("Array: ");
             printIntermediate(array);
             System.out.println();
@@ -44,6 +47,9 @@ public class EfficientSort {
             System.out.print(" Right: ");
             printIntermediate(right);
             System.out.println();
+            snapShots.add(left);
+            snapShots.add(right);
+
         }
         left = MergeSort(left, wantSteps);
         right = MergeSort(right, wantSteps);
@@ -83,6 +89,7 @@ public class EfficientSort {
             System.out.print("Merged: ");
             printIntermediate(mergeIn);
             System.out.println();
+            snapShots.add(mergeIn);
         }
         return mergeIn;
     }

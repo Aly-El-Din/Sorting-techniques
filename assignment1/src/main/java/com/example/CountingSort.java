@@ -1,4 +1,4 @@
-package com.example;
+package assignment1.src.main.java.com.example;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,8 +18,7 @@ public class CountingSort {
         int max = Collections.max(list);
         // Initialize frequency array
         int[] freq_arr = new int[max + 1];
-        int[] ans = new int[size];
-        ArrayList<int[]> intermediateArrays = new ArrayList<>();
+        
         // Counting the number of occurences
         for (int i = 0; i < size; i++) {
             freq_arr[list.get(i)]++;

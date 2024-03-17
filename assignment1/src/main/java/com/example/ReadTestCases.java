@@ -1,4 +1,4 @@
-package com.example;
+package assignment1.src.main.java.com.example;
 
 import java.io.*;
 import java.util.*;
