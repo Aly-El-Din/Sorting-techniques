@@ -112,7 +112,7 @@ public class SortTest {
 
         Long startTime, endTime;
         ArrayList<Integer> list = randomList();
-        System.out.println(list.size());
+        System.out.println("list size: "+list.size());
 
         // simple sort
         SimpleSort insertion = new SimpleSort();
